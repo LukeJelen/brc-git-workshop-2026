@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "slides/slides.qmd"
 
 website:
   title: "Git and GitHub"
@@ -12,6 +15,8 @@ website:
         text: Setup
       - href: exercises.qmd
         text: Exercises
+      - href: slides/slides.html
+        text: Slides
     right:
       - text: "NIHR Maudsley BRC"
         href: "https://www.maudsleybrc.nihr.ac.uk"
