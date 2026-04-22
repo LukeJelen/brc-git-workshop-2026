@@ -8,11 +8,30 @@ format:
     code-copy: true
 ---
 
+<style>
+.collab-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  border-left: none !important;
+}
+.collab-banner h2 {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  border-bottom: none;
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+.collab-banner p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0;
+}
+</style>
+
 These exercises take you from zero to a working Git-and-GitHub setup on your own machine. Work through them in order. Each one builds on the last, but the **collaborative exercise** at the end is self-contained — even if you get stuck earlier, you can still join in.
 
 If you get stuck at any point, raise your hand, and we'll come and help.
-
----
 
 ## Before you start
 
@@ -39,8 +58,6 @@ You may notice folders called `.git` or a file called `.gitconfig` mentioned dur
 
 You don't need to open these files — just know they exist.
 :::
-
----
 
 ## Exercise 0 · Pre-flight check {#ex0}
 
@@ -82,8 +99,6 @@ A quick check to make sure everything is ready before we dive in.
 If Git isn't installed, or GitHub Desktop won't sign in, flag us now — it's
 faster to fix this before the exercises than halfway through.
 :::
-
----
 
 ## Exercise 1 · Your first repository {#ex1}
 
@@ -135,10 +150,9 @@ Then, back in GitHub Desktop:
 
 3. The files you copied appear in the **Changes** panel on the left
 4. Right-click `data` in the list and choose **Ignore Folder (Add to .gitignore)** — GitHub Desktop writes a `.gitignore` file and `data/` disappears from the list
-5. Do the same for `outputs`: right-click → **Ignore Folder (Add to .gitignore)**
-6. Review the remaining files: you should see `README.md`, `scripts/`, and `.gitignore`
-7. In the bottom-left, write a commit message: `Initial commit`
-8. Click **Commit to main**
+5. Review the remaining files: you should see `README.md`, `scripts/`, and `.gitignore`
+6. In the bottom-left, write a commit message: `Initial commit`
+7. Click **Commit to main**
 
 ### Command line
 
@@ -150,6 +164,20 @@ git commit -m "Initial commit"
 :::
 
 ✅ **Checkpoint:** You've made your first commit. The files are now tracked by Git.
+
+::: {.callout-tip collapse="true"}
+## Adding things to .gitignore
+
+Your `.gitignore` file can contain more than just folder names. You can use wildcards to ignore whole categories of file — for example, adding `*.log` ignores every file ending in `.log`, wherever it appears in the project.
+
+**Mac users:** macOS automatically creates hidden `.DS_Store` files in every folder you open in Finder. They're harmless but clutter your repository. Add this line to your `.gitignore` to suppress them across the whole project:
+
+```bash
+.DS_Store
+```
+
+You can open `.gitignore` in any text editor and add lines by hand — one pattern per line. Commit the change afterwards so everyone working on the project benefits from the same rules.
+:::
 
 ### Step 3: Make a change and commit again
 
@@ -193,16 +221,6 @@ You should see two commits listed, most recent first.
 :::
 
 ✅ **Checkpoint:** Two commits in the history. You've got a working local repository.
-
-::: {.callout-tip collapse="true"}
-## Stretch task
-
-- Make two more commits (change a different file each time)
-- In GitHub Desktop, click on a commit in the History tab to see exactly what changed line by line
-- On the command line: `git diff HEAD~1` compares your current state to the previous commit
-:::
-
----
 
 ## Exercise 2 · Push to GitHub {#ex2}
 
@@ -271,8 +289,6 @@ Notice that `data/` and `outputs/` are not on GitHub — even though they're in 
 - Check that the new commit appears on GitHub
 :::
 
----
-
 ## Exercise 3 · The everyday loop {#ex3}
 
 *~10 minutes · 15:30–15:40*
@@ -337,13 +353,13 @@ Both work — if you see `git checkout` elsewhere, that's why.
 :::
 
 
----
-
-## Collaborative exercise · Add your name
+::: {.collab-banner}
+## ✨ Collaborative exercise · Add your name ✨
 
 *~20 minutes · 15:40–16:00*
+:::
 
-Everyone is going to contribute to a shared repository. This is exactly how open-source collaboration works.
+Everyone is going to contribute to a shared repository — the same pattern used in collaborative research and open-source projects.
 
 The repo is at: **[github.com/ewancarr/brc-git-workshop-2026](https://github.com/ewancarr/brc-git-workshop-2026)**
 
@@ -427,8 +443,6 @@ git push
 
 ✅ **Done!** Watch the presenter's screen — your PR will appear in the list, and when it's merged, your name will be added to `names.md` live.
 
----
-
 ::: {.callout-tip collapse="true"}
 ## Common issues
 
@@ -441,8 +455,6 @@ Click **Refresh** in the repository list, or paste the URL manually via **File �
 **"Authentication failed" when pushing**
 Flag a helper — this usually means GitHub Desktop isn't signed in, or the CLI needs `gh auth login`.
 :::
-
----
 
 ## Exercise 4 · Working with Branches {#ex4}
 

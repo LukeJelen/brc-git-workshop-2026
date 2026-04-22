@@ -2,7 +2,7 @@
 title: "Git for people who've been meaning to learn Git (but haven't yet)"
 subtitle: "NIHR Maudsley BRC<br>23 April 2026"
 author: "Dr Ewan Carr"
-institute: "King's College London"
+institute: "Department of Biostatistics & Health Informatics<br>King's College London"
 format:
   revealjs:
     theme: [default, custom.scss]
